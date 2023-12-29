@@ -1,0 +1,122 @@
+{
+  "id": "hero_heading",
+  "type": "SharedSlice",
+  "name": "HeroHeading",
+  "description": "HeroHeading",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph,strong,em"
+          }
+        },
+        "cta1Text": {
+          "type": "Text",
+          "config": {
+            "label": "Call to Action 1 Text",
+            "placeholder": ""
+          }
+        },
+        "cta1Link": {
+          "type": "Link",
+          "config": {
+            "label": "Call to Action 1 Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "cta2Text": {
+          "type": "Text",
+          "config": {
+            "label": "Call to Action 2 Text",
+            "placeholder": ""
+          }
+        },
+        "cta2Link": {
+          "type": "Link",
+          "config": {
+            "label": "Call to Action 2 Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "heroWithVideo",
+      "name": "Hero - with Video",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph,strong,em"
+          }
+        },
+        "cta1Text": {
+          "type": "Text",
+          "config": {
+            "label": "Call to Action 1 Text",
+            "placeholder": ""
+          }
+        },
+        "cta1Link": {
+          "type": "Link",
+          "config": {
+            "label": "Call to Action 1 Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "cta2Text": {
+          "type": "Text",
+          "config": {
+            "label": "Call to Action 2 Text",
+            "placeholder": ""
+          }
+        },
+        "cta2Link": {
+          "type": "Link",
+          "config": {
+            "label": "Call to Action 2 Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
