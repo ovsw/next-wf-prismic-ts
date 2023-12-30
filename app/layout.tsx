@@ -1,6 +1,8 @@
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// import './globals.css'
 import "@/devlink/global.css";
 import { DevLinkProvider } from "@/devlink";
 
@@ -20,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <DevLinkProvider>{children}</DevLinkProvider>
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   );

@@ -1,53 +1,6 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"heading": {
-				"__TYPE__": "FieldContent",
-				"value": "back",
-				"type": "Text"
-			},
-			"text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Reprehenderit deserunt proident id veniam ex ex id do. Labore tempor cillum ipsum ad ullamco et laborum aute culpa aute."
-						}
-					}
-				]
-			},
-			"cta1Text": {
-				"__TYPE__": "FieldContent",
-				"value": "win",
-				"type": "Text"
-			},
-			"cta1Link": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "http://twitter.com"
-				}
-			},
-			"cta2Text": {
-				"__TYPE__": "FieldContent",
-				"value": "court",
-				"type": "Text"
-			},
-			"cta2Link": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://prismic.io"
-				}
-			}
-		},
-		"items": []
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
 		"variation": "heroWithVideo",
 		"primary": {
 			"heading": {
@@ -104,5 +57,52 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit deserunt proident id veniam ex ex id do. Labore tempor cillum ipsum ad ullamco et laborum aute culpa aute."
+						}
+					}
+				]
+			},
+			"cta1Text": {
+				"__TYPE__": "FieldContent",
+				"value": "win",
+				"type": "Text"
+			},
+			"cta1Link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"cta2Text": {
+				"__TYPE__": "FieldContent",
+				"value": "court",
+				"type": "Text"
+			},
+			"cta2Link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Medium Length Heading Goes Here"
+			}
+		},
+		"items": []
 	}
 ]
