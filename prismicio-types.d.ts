@@ -273,6 +273,16 @@ export interface HeroHeadingSliceHeroWithVideoPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta2Link: prismic.LinkField;
+
+  /**
+   * Video Link field in *HeroHeading → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_heading.primary.videoLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  videoLink: prismic.LinkField;
 }
 
 /**

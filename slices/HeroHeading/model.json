@@ -114,6 +114,14 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "videoLink": {
+          "type": "Link",
+          "config": {
+            "label": "Video Link",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {}
