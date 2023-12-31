@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    domains: [
+      "uploads-ssl.webflow.com",
+      "images.unsplash.com",
+      "images.prismic.io",
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
