@@ -1,7 +1,7 @@
 {
   "id": "hero_heading",
   "type": "SharedSlice",
-  "name": "HeroHeading",
+  "name": "Hero",
   "description": "HeroHeading",
   "variations": [
     {
@@ -70,8 +70,8 @@
       "items": {}
     },
     {
-      "id": "heroWithVideo",
-      "name": "Hero - with Video",
+      "id": "hero5",
+      "name": "Hero 5",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
@@ -127,14 +127,6 @@
           "type": "Link",
           "config": {
             "label": "Call to Action 2 Link",
-            "placeholder": "",
-            "select": null
-          }
-        },
-        "videoLink": {
-          "type": "Link",
-          "config": {
-            "label": "Video Link",
             "placeholder": "",
             "select": null
           }

@@ -183,11 +183,41 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomeDocument | PageDocument | SettingsDocument;
 
 /**
- * Primary content in *HeroHeading → Primary*
+ * Default variation for Feature Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeatureSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Feature*
+ */
+type FeatureSliceVariation = FeatureSliceDefault;
+
+/**
+ * Feature Shared Slice
+ *
+ * - **API ID**: `feature`
+ * - **Description**: Feature
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeatureSlice = prismic.SharedSlice<
+  "feature",
+  FeatureSliceVariation
+>;
+
+/**
+ * Primary content in *Hero → Primary*
  */
 export interface HeroHeadingSliceDefaultPrimary {
   /**
-   * Heading field in *HeroHeading → Primary*
+   * Heading field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -197,7 +227,7 @@ export interface HeroHeadingSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
-   * text field in *HeroHeading → Primary*
+   * text field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -207,7 +237,7 @@ export interface HeroHeadingSliceDefaultPrimary {
   text: prismic.RichTextField;
 
   /**
-   * Main Image field in *HeroHeading → Primary*
+   * Main Image field in *Hero → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -217,7 +247,7 @@ export interface HeroHeadingSliceDefaultPrimary {
   mainImage: prismic.ImageField<never>;
 
   /**
-   * Call to Action 1 Text field in *HeroHeading → Primary*
+   * Call to Action 1 Text field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -227,7 +257,7 @@ export interface HeroHeadingSliceDefaultPrimary {
   cta1Text: prismic.KeyTextField;
 
   /**
-   * Call to Action 1 Link field in *HeroHeading → Primary*
+   * Call to Action 1 Link field in *Hero → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -237,7 +267,7 @@ export interface HeroHeadingSliceDefaultPrimary {
   cta1Link: prismic.LinkField;
 
   /**
-   * Call to Action 2 Text field in *HeroHeading → Primary*
+   * Call to Action 2 Text field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -247,7 +277,7 @@ export interface HeroHeadingSliceDefaultPrimary {
   cta2Text: prismic.KeyTextField;
 
   /**
-   * Call to Action 2 Link field in *HeroHeading → Primary*
+   * Call to Action 2 Link field in *Hero → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -258,7 +288,7 @@ export interface HeroHeadingSliceDefaultPrimary {
 }
 
 /**
- * Default variation for HeroHeading Slice
+ * Default variation for Hero Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -271,11 +301,11 @@ export type HeroHeadingSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *HeroHeading → Primary*
+ * Primary content in *Hero → Primary*
  */
-export interface HeroHeadingSliceHeroWithVideoPrimary {
+export interface HeroHeadingSliceHero5Primary {
   /**
-   * Heading field in *HeroHeading → Primary*
+   * Heading field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -285,7 +315,7 @@ export interface HeroHeadingSliceHeroWithVideoPrimary {
   heading: prismic.KeyTextField;
 
   /**
-   * text field in *HeroHeading → Primary*
+   * text field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -295,7 +325,7 @@ export interface HeroHeadingSliceHeroWithVideoPrimary {
   text: prismic.RichTextField;
 
   /**
-   * Main Image field in *HeroHeading → Primary*
+   * Main Image field in *Hero → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -305,7 +335,7 @@ export interface HeroHeadingSliceHeroWithVideoPrimary {
   mainImage: prismic.ImageField<never>;
 
   /**
-   * Call to Action 1 Text field in *HeroHeading → Primary*
+   * Call to Action 1 Text field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -315,7 +345,7 @@ export interface HeroHeadingSliceHeroWithVideoPrimary {
   cta1Text: prismic.KeyTextField;
 
   /**
-   * Call to Action 1 Link field in *HeroHeading → Primary*
+   * Call to Action 1 Link field in *Hero → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -325,7 +355,7 @@ export interface HeroHeadingSliceHeroWithVideoPrimary {
   cta1Link: prismic.LinkField;
 
   /**
-   * Call to Action 2 Text field in *HeroHeading → Primary*
+   * Call to Action 2 Text field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -335,7 +365,7 @@ export interface HeroHeadingSliceHeroWithVideoPrimary {
   cta2Text: prismic.KeyTextField;
 
   /**
-   * Call to Action 2 Link field in *HeroHeading → Primary*
+   * Call to Action 2 Link field in *Hero → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -343,40 +373,30 @@ export interface HeroHeadingSliceHeroWithVideoPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta2Link: prismic.LinkField;
-
-  /**
-   * Video Link field in *HeroHeading → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_heading.primary.videoLink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  videoLink: prismic.LinkField;
 }
 
 /**
- * Hero - with Video variation for HeroHeading Slice
+ * Hero 5 variation for Hero Slice
  *
- * - **API ID**: `heroWithVideo`
+ * - **API ID**: `hero5`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroHeadingSliceHeroWithVideo = prismic.SharedSliceVariation<
-  "heroWithVideo",
-  Simplify<HeroHeadingSliceHeroWithVideoPrimary>,
+export type HeroHeadingSliceHero5 = prismic.SharedSliceVariation<
+  "hero5",
+  Simplify<HeroHeadingSliceHero5Primary>,
   never
 >;
 
 /**
- * Slice variation for *HeroHeading*
+ * Slice variation for *Hero*
  */
 type HeroHeadingSliceVariation =
   | HeroHeadingSliceDefault
-  | HeroHeadingSliceHeroWithVideo;
+  | HeroHeadingSliceHero5;
 
 /**
- * HeroHeading Shared Slice
+ * Hero Shared Slice
  *
  * - **API ID**: `hero_heading`
  * - **Description**: HeroHeading
@@ -406,12 +426,15 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      FeatureSlice,
+      FeatureSliceVariation,
+      FeatureSliceDefault,
       HeroHeadingSlice,
       HeroHeadingSliceDefaultPrimary,
-      HeroHeadingSliceHeroWithVideoPrimary,
+      HeroHeadingSliceHero5Primary,
       HeroHeadingSliceVariation,
       HeroHeadingSliceDefault,
-      HeroHeadingSliceHeroWithVideo,
+      HeroHeadingSliceHero5,
     };
   }
 }
