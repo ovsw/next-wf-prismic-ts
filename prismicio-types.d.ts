@@ -207,6 +207,16 @@ export interface HeroHeadingSliceDefaultPrimary {
   text: prismic.RichTextField;
 
   /**
+   * Main Image field in *HeroHeading → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_heading.primary.mainImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  mainImage: prismic.ImageField<never>;
+
+  /**
    * Call to Action 1 Text field in *HeroHeading → Primary*
    *
    * - **Field Type**: Text
@@ -283,6 +293,16 @@ export interface HeroHeadingSliceHeroWithVideoPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * Main Image field in *HeroHeading → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_heading.primary.mainImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  mainImage: prismic.ImageField<never>;
 
   /**
    * Call to Action 1 Text field in *HeroHeading → Primary*

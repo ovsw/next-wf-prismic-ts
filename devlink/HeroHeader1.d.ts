@@ -11,4 +11,5 @@ declare function HeroHeader1(props: {
   mainImageAltText?: Types.Basic.AltText;
   mainImage?: Types.Asset.Image;
   paragraphSlot?: Types.Devlink.Slot;
+  mainImageSlot?: Types.Devlink.Slot;
 }): React.JSX.Element;

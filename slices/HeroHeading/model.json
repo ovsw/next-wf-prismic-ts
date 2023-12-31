@@ -28,6 +28,14 @@
             "single": "paragraph,strong,em"
           }
         },
+        "mainImage": {
+          "type": "Image",
+          "config": {
+            "label": "Main Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "cta1Text": {
           "type": "Text",
           "config": {
@@ -83,6 +91,14 @@
             "placeholder": "",
             "allowTargetBlank": false,
             "single": "paragraph,strong,em"
+          }
+        },
+        "mainImage": {
+          "type": "Image",
+          "config": {
+            "label": "Main Image",
+            "constraint": {},
+            "thumbnails": []
           }
         },
         "cta1Text": {

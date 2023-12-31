@@ -21,6 +21,7 @@ export function HeroHeader1({
   mainImageAltText = "__wf_reserved_inherit",
   mainImage = "https://uploads-ssl.webflow.com/6581bb7b07ea94b2c8fd8a3f/6581bb7c07ea94b2c8fd8aac_placeholder-image.svg",
   paragraphSlot,
+  mainImageSlot,
 }) {
   return (
     <_Component
@@ -83,13 +84,15 @@ export function HeroHeader1({
           className={_utils.cx(_styles, "home_1_hero-header_image-wrapper")}
           tag="div"
         >
-          <_Builtin.Image
-            className={_utils.cx(_styles, "home_1_hero-header_image")}
-            loading="eager"
-            width="auto"
-            height="auto"
-            src={mainImage}
-          />
+          {mainImageSlot ?? (
+            <_Builtin.Image
+              className={_utils.cx(_styles, "home_1_hero-header_image")}
+              loading="eager"
+              width="auto"
+              height="auto"
+              src={mainImage}
+            />
+          )}
         </_Builtin.Block>
       </_Builtin.Grid>
     </_Component>
