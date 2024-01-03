@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = HeroHeadingSlice;
+type HomeDocumentDataSlicesSlice = FeatureSlice | HeroHeadingSlice;
 
 /**
  * Content for Home documents
@@ -183,6 +183,105 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomeDocument | PageDocument | SettingsDocument;
 
 /**
+ * Primary content in *Feature → Primary*
+ */
+export interface FeatureSliceDefaultPrimary {
+  /**
+   * Eyebrow Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.eyebrow_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow_text: prismic.KeyTextField;
+
+  /**
+   * Heading Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.heading_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading_text: prismic.KeyTextField;
+
+  /**
+   * Paragraph Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.paragraph_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph_text: prismic.RichTextField;
+
+  /**
+   * Main Image field in *Feature → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+
+  /**
+   * Main Image Aspect Ratio field in *Feature → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Square (1/1)
+   * - **API ID Path**: feature.primary.main_image_ar
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  main_image_ar: prismic.SelectField<
+    "Square (1/1)" | "Landscape (3:2)" | "Portrait (2:3)",
+    "filled"
+  >;
+
+  /**
+   * Button 1 Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.button_1_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_1_text: prismic.KeyTextField;
+
+  /**
+   * Button 1 Link field in *Feature → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.button_1_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_1_link: prismic.LinkField;
+
+  /**
+   * Button 2 Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.button_2_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_2_text: prismic.KeyTextField;
+
+  /**
+   * Button 2 Link field in *Feature → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.button_2_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_2_link: prismic.LinkField;
+}
+
+/**
  * Default variation for Feature Slice
  *
  * - **API ID**: `default`
@@ -191,14 +290,126 @@ export type AllDocumentTypes = HomeDocument | PageDocument | SettingsDocument;
  */
 export type FeatureSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<FeatureSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Feature → Primary*
+ */
+export interface FeatureSliceFeature192Primary {
+  /**
+   * Eyebrow Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.eyebrow_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrow_text: prismic.KeyTextField;
+
+  /**
+   * Heading Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.heading_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading_text: prismic.KeyTextField;
+
+  /**
+   * Paragraph Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.paragraph_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph_text: prismic.RichTextField;
+
+  /**
+   * Main Image field in *Feature → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+
+  /**
+   * Main Image Aspect Ratio field in *Feature → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Square (1/1)
+   * - **API ID Path**: feature.primary.main_image_ar
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  main_image_ar: prismic.SelectField<
+    "Square (1/1)" | "Landscape (3:2)" | "Portrait (2:3)",
+    "filled"
+  >;
+
+  /**
+   * Button 1 Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.button_1_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_1_text: prismic.KeyTextField;
+
+  /**
+   * Button 1 Link field in *Feature → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.button_1_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_1_link: prismic.LinkField;
+
+  /**
+   * Button 2 Text field in *Feature → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.button_2_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_2_text: prismic.KeyTextField;
+
+  /**
+   * Button 2 Link field in *Feature → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.primary.button_2_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_2_link: prismic.LinkField;
+}
+
+/**
+ * Feature 192 variation for Feature Slice
+ *
+ * - **API ID**: `feature192`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeatureSliceFeature192 = prismic.SharedSliceVariation<
+  "feature192",
+  Simplify<FeatureSliceFeature192Primary>,
   never
 >;
 
 /**
  * Slice variation for *Feature*
  */
-type FeatureSliceVariation = FeatureSliceDefault;
+type FeatureSliceVariation = FeatureSliceDefault | FeatureSliceFeature192;
 
 /**
  * Feature Shared Slice
@@ -427,8 +638,11 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       AllDocumentTypes,
       FeatureSlice,
+      FeatureSliceDefaultPrimary,
+      FeatureSliceFeature192Primary,
       FeatureSliceVariation,
       FeatureSliceDefault,
+      FeatureSliceFeature192,
       HeroHeadingSlice,
       HeroHeadingSliceDefaultPrimary,
       HeroHeadingSliceHero5Primary,
