@@ -65,7 +65,7 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-type PageDocumentDataSlicesSlice = HeroHeadingSlice;
+type PageDocumentDataSlicesSlice = FeatureSlice | HeroHeadingSlice;
 
 /**
  * Content for Page documents

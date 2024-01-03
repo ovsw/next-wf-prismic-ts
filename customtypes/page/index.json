@@ -8,7 +8,8 @@
     "Main": {
       "uid": {
         "config": {
-          "label": "UID"
+          "label": "Page Slug (url)",
+          "placeholder": "eg: page/something"
         },
         "type": "UID"
       },
@@ -17,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "feature": {
+              "type": "SharedSlice"
+            },
             "hero_heading": {
               "type": "SharedSlice"
             }
