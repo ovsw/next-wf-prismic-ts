@@ -4,6 +4,38 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Content for Category documents
+ */
+interface CategoryDocumentData {
+  /**
+   * Name field in *Category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: category.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+}
+
+/**
+ * Category document from Prismic
+ *
+ * - **API ID**: `category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CategoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CategoryDocumentData>,
+    "category",
+    Lang
+  >;
+
 type HomeDocumentDataSlicesSlice = FeatureSlice | HeroHeadingSlice;
 
 /**
@@ -71,6 +103,17 @@ type PageDocumentDataSlicesSlice = FeatureSlice | HeroHeadingSlice;
  * Content for Page documents
  */
 interface PageDocumentData {
+  /**
+   * Category field in *Page*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category: prismic.ContentRelationshipField<"category">;
+
   /**
    * Slice Zone field in *Page*
    *
@@ -180,7 +223,11 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomeDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes =
+  | CategoryDocument
+  | HomeDocument
+  | PageDocument
+  | SettingsDocument;
 
 /**
  * Primary content in *Feature → Primary*
@@ -628,6 +675,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      CategoryDocument,
+      CategoryDocumentData,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,

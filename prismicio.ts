@@ -16,10 +16,17 @@ export const repositoryName =
 // TODO: Update the routes array to match your project's route structure.
 const routes: prismic.ClientConfig["routes"] = [
   // Examples:
-  // {
-  // 	type: "homepage",
-  // 	path: "/",
-  // },
+  {
+    type: "home",
+    path: "/",
+  },
+  {
+    type: "page",
+    resolvers: {
+      category: "category",
+    },
+    path: "/:category?/:uid",
+  },
   // {
   // 	type: "page",
   // 	path: "/:uid",
