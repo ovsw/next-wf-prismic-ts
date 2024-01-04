@@ -5,6 +5,8 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
+export const dynamicParams = false;
+
 /**
  * This page renders a Prismic Document dynamically based on the URL.
  */
