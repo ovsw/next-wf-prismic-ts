@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withNextIntl = require("next-intl/plugin")();
+
+const nextConfig = withNextIntl({
   images: {
     domains: [
       "uploads-ssl.webflow.com",
@@ -7,6 +9,6 @@ const nextConfig = {
       "images.prismic.io",
     ],
   },
-};
+});
 
 module.exports = nextConfig;

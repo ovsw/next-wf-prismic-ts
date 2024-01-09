@@ -5,19 +5,28 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
+// import type {Client } from "@prismicio/client"
+
 /**
  * This page renders a Prismic Document dynamically based on the URL.
  */
 
-type Params = { uid: string };
+export const dynamicParams = false;
+
+type Params = { uid: string; lang: string };
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const page = await client
-    .getByUID("page", params.uid)
+    .getByUID("page", params.uid, { lang: params.lang })
     .catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return (
+    <>
+      <p>&apos;lang&apos; param: {params.lang}</p>
+      <SliceZone slices={page.data.slices} components={components} />
+    </>
+  );
 }
 
 export async function generateMetadata({
@@ -41,12 +50,15 @@ export async function generateStaticParams() {
    * Query all Documents from the API, except the homepage.
    */
   const client = createClient();
-  const pages = await client.getAllByType("page");
+  const pages = await client.getAllByType("page", {
+    lang: "*",
+    // filters: [prismic.filter.not("my.page.uid", "home")],
+  });
 
   /**
    * Define a path for every Document.
    */
   return pages.map((page) => {
-    return { uid: page.uid };
+    return { uid: page.uid, lang: page.lang };
   });
 }
