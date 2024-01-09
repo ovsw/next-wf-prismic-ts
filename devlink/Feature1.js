@@ -73,6 +73,7 @@ export function Feature1({
                       <_Builtin.Link
                         className={_utils.cx(_styles, "button", "is-secondary")}
                         button={true}
+                        block=""
                         options={{
                           href: "#",
                         }}
@@ -87,6 +88,7 @@ export function Feature1({
                           "is-icon"
                         )}
                         button={false}
+                        block="inline"
                         options={{
                           href: "#",
                         }}

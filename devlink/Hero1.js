@@ -63,6 +63,7 @@ export function Hero1({
                       <_Builtin.Link
                         className={_utils.cx(_styles, "button")}
                         button={true}
+                        block=""
                         options={{
                           href: "#",
                         }}
@@ -72,6 +73,7 @@ export function Hero1({
                       <_Builtin.Link
                         className={_utils.cx(_styles, "button", "is-secondary")}
                         button={true}
+                        block=""
                         options={{
                           href: "#",
                         }}

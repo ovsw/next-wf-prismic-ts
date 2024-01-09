@@ -71,6 +71,7 @@ export function Hero5({
                       <_Builtin.Link
                         className={_utils.cx(_styles, "button")}
                         button={true}
+                        block=""
                         options={{
                           href: "#",
                         }}
@@ -85,6 +86,7 @@ export function Hero5({
                           "is-alternate"
                         )}
                         button={true}
+                        block=""
                         options={{
                           href: "#",
                         }}
