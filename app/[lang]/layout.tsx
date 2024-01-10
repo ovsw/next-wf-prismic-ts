@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/devlink/global.css";
 import { DevLinkProvider } from "@/devlink";
-import LanguageChanger from "@/components/LanguageChanger";
 import { Header } from "@/components/Header";
 
 // i18n stuff
