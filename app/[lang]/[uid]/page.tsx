@@ -5,6 +5,9 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
+import { getLocales } from "@/lib/getLocales";
+import { Header } from "@/components/Header";
+
 // import type {Client } from "@prismicio/client"
 
 /**
@@ -21,8 +24,13 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("page", params.uid, { lang: params.lang })
     .catch(() => notFound());
 
+  const prismicLocales = await getLocales(page, client);
+
   return (
     <>
+      <Header locales={prismicLocales} />
+      {JSON.stringify(prismicLocales, null, 2)}
+
       <p>&apos;lang&apos; param: {params.lang}</p>
       <SliceZone slices={page.data.slices} components={components} />
     </>

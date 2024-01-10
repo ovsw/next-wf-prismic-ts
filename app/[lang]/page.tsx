@@ -4,7 +4,8 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
-// import { getLocales } from "@/lib/getLocales";
+import { getLocales } from "@/lib/getLocales";
+import { Header } from "@/components/Header";
 
 export default async function Page({
   params: { lang },
@@ -13,13 +14,13 @@ export default async function Page({
 }) {
   const client = createClient();
   const page = await client.getSingle("home", { lang });
-  // const prismicLocales = await getLocales(page, client);
+  const prismicLocales = await getLocales(page, client);
   // console.log(prismicLocales);
 
   return (
     <>
-      {/* <Header locales={prismicLocales} /> */}
-      {/* {JSON.stringify(prismicLocales, null, 2)} */}
+      <Header locales={prismicLocales} />
+      {JSON.stringify(prismicLocales, null, 2)}
       <p>&apos;lang&apos; param: {lang}</p>
       <SliceZone slices={page.data.slices} components={components} />
     </>
